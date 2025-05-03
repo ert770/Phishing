@@ -1,63 +1,89 @@
 body {
-    font-family: "微軟正黑體", sans-serif;
-    background: #f7f7f7;
+
+    align-items: center;
+    height: 100vh; /* Ensures the container is vertically centered as well */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    max-width: 360px;
     margin: 0;
+    padding: 32px 24px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* 讓文字內容水平置中 */
 }
-header {
-    background: #e20036;
-    padding: 1rem;
-    text-align: center;
+
+.title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #333;
 }
-.logo {
-    height: 40px;
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* 保持輸入框的標籤靠左對齊 */
 }
-main {
-    max-width: 400px;
-    margin: 2rem auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.1);
-}
-form label {
+
+label {
     display: block;
-    margin-top: 1rem;
-    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 6px;
 }
+
 input {
     width: 100%;
-    padding: 0.6rem;
-    margin-top: 0.3rem;
+    padding: 10px 12px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
-button {
-    margin-top: 1.5rem;
+
+input:focus {
+    border-color: #e2006a;
+    outline: none;
+}
+
+.login-btn {
     width: 100%;
-    padding: 0.8rem;
-    background: #e20036;
+    background-color: #e2006a;
     color: white;
+    font-size: 16px;
+    padding: 12px 0;
     border: none;
     border-radius: 6px;
-    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
 }
-.flex {
-    display: flex;
-    gap: 1rem;
+
+.login-btn:hover {
+    background-color: #c9005a;
 }
-.icon {
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 6px;
+
+.extra-links {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
 }
-.notice {
-    background: #fff3f3;
-    border-left: 4px solid #e20036;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+
+.extra-links a {
+    color: #666;
+    text-decoration: none;
+    text-align: center; /* 讓連結水平置中 */
 }
+
+.extra-links a:hover {
+    color: #e2006a;
+    text-decoration: underline;
+}
+
 .error {
     color: red;
-    font-size: 0.9rem;
-    margin-top: 1rem;
+    font-size: 13px;
+    margin-top: 6px;
 }

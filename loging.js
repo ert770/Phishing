@@ -1,13 +1,14 @@
 document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    const inputs = document.querySelectorAll("input");
-    const account = inputs[0].value;
-    const password = inputs[1].value;
+    const account = document.getElementById("account").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorText = document.getElementById("loginError");
 
-    if (account && password) {
-        console.log("偷到帳號密碼：", account, password);
-        window.location.href = "payment.html";
-    } else {
-        document.getElementById("loginError").textContent = "請輸入完整帳密。";
+    if (!account || !password) {
+        errorText.textContent = "請輸入帳號與密碼。";
+        return;
     }
+
+    console.log("模擬偷取帳密：", account, password);
+    window.location.href = "payment.html";
 });

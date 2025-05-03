@@ -2,26 +2,34 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>momo 購物網 - 登入</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>momo購物網 - 會員登入</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <img src="img/logo.png" class="logo" alt="momo">
-</header>
-<main>
-    <h2>會員登入</h2>
+<div class="login-container">
+    <h1 class="title">會員登入</h1>
+
     <form id="loginForm">
-        <label><img src="img/user-icon.png" class="icon"> 帳號</label>
-        <input type="text" placeholder="手機號碼 / Email" required>
+        <div class="form-group">
+            <label for="account">手機號碼 / Email</label>
+            <input type="text" id="account" placeholder="請輸入手機號碼或Email" required>
+        </div>
 
-        <label><img src="img/lock-icon.png" class="icon"> 密碼</label>
-        <input type="password" placeholder="請輸入密碼" required>
+        <div class="form-group">
+            <label for="password">密碼</label>
+            <input type="password" id="password" placeholder="請輸入密碼" required>
+        </div>
 
-        <button type="submit">登入</button>
+        <p class="error" id="loginError"></p>
+
+        <button type="submit" class="login-btn">登入</button>
+
+        <div class="extra-links">
+            <a href="#">忘記密碼</a>｜<a href="#">加入會員</a>
+        </div>
     </form>
-    <p class="error" id="loginError"></p>
-</main>
+</div>
 
 <script src="login.js"></script>
 </body>
