@@ -1,22 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>momo 購物網 - 登入</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <header>
-    <img src="logo.png" alt="momo logo">
+    <img src="img/logo.png" class="logo" alt="momo">
 </header>
 <main>
-    <form>
-        <label>帳號</label>
-        <input type="text" placeholder="請輸入帳號">
+    <h2>會員登入</h2>
+    <form id="loginForm">
+        <label><img src="img/user-icon.png" class="icon"> 帳號</label>
+        <input type="text" placeholder="手機號碼 / Email" required>
 
-        <label>密碼</label>
-        <input type="password" placeholder="請輸入密碼">
-
-        <div class="options">
-            <label><input type="checkbox"> 記住我</label>
-            <a href="#">忘記密碼？</a>
-        </div>
+        <label><img src="img/lock-icon.png" class="icon"> 密碼</label>
+        <input type="password" placeholder="請輸入密碼" required>
 
         <button type="submit">登入</button>
     </form>
+    <p class="error" id="loginError"></p>
 </main>
-<footer>
-    <p>© momo.com Inc.</p>
-</footer>
+
+<script src="login.js"></script>
+</body>
+</html>

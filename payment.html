@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>補繳運費 - momo 購物網</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img src="img/logo.png" class="logo" alt="momo">
+</header>
+<main>
+  <div class="notice">
+    <h2>物流異常通知</h2>
+    <p>您的訂單配送異常，請於 24 小時內補繳 <strong>NT$35</strong> 運費。</p>
+  </div>
+
+  <form id="payForm">
+    <label><img src="img/card-icon.png" class="icon"> 信用卡卡號</label>
+    <input type="text" placeholder="1234 5678 9012 3456" required>
+
+    <label><img src="img/user-icon.png" class="icon"> 持卡人姓名</label>
+    <input type="text" placeholder="王小明" required>
+
+    <label><img src="img/calendar-icon.png" class="icon"> 有效期限 / 安全碼</label>
+    <div class="flex">
+      <input type="text" placeholder="MM/YY" required>
+      <input type="text" placeholder="CVV" required>
+    </div>
+
+    <button type="submit">立即付款 NT$35</button>
+  </form>
+
+  <p class="error" id="payError"></p>
+</main>
+
+<script src="payment.js"></script>
+</body>
+</html>

