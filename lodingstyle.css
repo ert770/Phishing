@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+header {
+    background-color: #e20036;
+    padding: 1rem;
+    text-align: center;
+}
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input {
+    width: 100%;
+    margin: 0.5rem 0 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #e20036;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
