@@ -1,36 +1,127 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>momo購物網 - 會員登入</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>momo購物網</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="login-container">
-    <h1 class="title">會員登入</h1>
 
-    <form id="loginForm">
-        <div class="form-group">
-            <label for="account">手機號碼 / Email</label>
-            <input type="text" id="account" placeholder="請輸入手機號碼或Email" required>
-        </div>
+<!-- 頁首 -->
+<header class="header">
+  <div class="logo">momo</div>
+  <input type="text" class="search-bar" placeholder="請輸入商品關鍵字">
+  <div class="user-actions">
+    <a href="#">登入</a> / <a href="#">註冊</a>
+  </div>
+</header>
 
-        <div class="form-group">
-            <label for="password">密碼</label>
-            <input type="password" id="password" placeholder="請輸入密碼" required>
-        </div>
+<!-- 主選單 -->
+<nav class="nav-bar">
+  <ul>
+    <li><a href="#">美妝</a></li>
+    <li><a href="#">家電</a></li>
+    <li><a href="#">服飾</a></li>
+    <li><a href="#">美食</a></li>
+    <li><a href="#">日用</a></li>
+    <li><a href="#">更多</a></li>
+  </ul>
+</nav>
 
-        <p class="error" id="loginError"></p>
+<!-- 輪播廣告區 -->
+<section class="carousel">
+  <div class="banner">🔥 限時下殺 5 折 🔥</div>
+</section>
 
-        <button type="submit" class="login-btn">登入</button>
+<!-- 商品展示區 -->
+<section class="product-list">
+  <!-- 熱門商品 -->
+  <div class="product-card">
+    <div class="product-img">商品圖</div>
+    <p class="product-name">限時優惠！洗衣機</p>
+    <p class="product-price">$8,888</p>
+    <button>立即購買</button>
+  </div>
+  <div class="product-card">
+    <div class="product-img">商品圖</div>
+    <p class="product-name">最新款手機</p>
+    <p class="product-price">$29,999</p>
+    <button>立即購買</button>
+  </div>
+  <!-- 家電 -->
+  <div class="product-card">
+    <div class="product-img">家電商品圖1</div>
+    <p class="product-name">智慧掃地機器人</p>
+    <p class="product-price">$5,999</p>
+    <button>立即購買</button>
+  </div>
+  <div class="product-card">
+    <div class="product-img">家電商品圖2</div>
+    <p class="product-name">空氣清淨機</p>
+    <p class="product-price">$3,499</p>
+    <button>立即購買</button>
+  </div>
+  <!-- 服飾 -->
+  <div class="product-card">
+    <div class="product-img">服飾商品圖1</div>
+    <p class="product-name">時尚連帽外套</p>
+    <p class="product-price">$1,199</p>
+    <button>立即購買</button>
+  </div>
+  <div class="product-card">
+    <div class="product-img">服飾商品圖2</div>
+    <p class="product-name">經典牛仔褲</p>
+    <p class="product-price">$899</p>
+    <button>立即購買</button>
+  </div>
+  <!-- 美食 -->
+  <div class="product-card">
+    <div class="product-img">美食商品圖1</div>
+    <p class="product-name">手工巧克力禮盒</p>
+    <p class="product-price">$499</p>
+    <button>立即購買</button>
+  </div>
+  <div class="product-card">
+    <div class="product-img">美食商品圖2</div>
+    <p class="product-name">頂級咖啡豆</p>
+    <p class="product-price">$799</p>
+    <button>立即購買</button>
+  </div>
+  <!-- 日用 -->
+  <div class="product-card">
+    <div class="product-img">日用商品圖1</div>
+    <p class="product-name">多功能收納盒</p>
+    <p class="product-price">$199</p>
+    <button>立即購買</button>
+  </div>
+  <div class="product-card">
+    <div class="product-img">日用商品圖2</div>
+    <p class="product-name">環保吸水毛巾</p>
+    <p class="product-price">$99</p>
+    <button>立即購買</button>
+  </div>
+  <!-- 美妝 -->
+  <div class="product-card">
+    <div class="product-img">美妝商品圖1</div>
+    <p class="product-name">高效保濕面膜</p>
+    <p class="product-price">$299</p>
+    <button>立即購買</button>
+  </div>
+  <div class="product-card">
+    <div class="product-img">美妝商品圖2</div>
+    <p class="product-name">抗皺精華液</p>
+    <p class="product-price">$1,299</p>
+    <button>立即購買</button>
+  </div>
 
-        <div class="extra-links">
-            <a href="#">忘記密碼</a>｜<a href="#">加入會員</a>
-        </div>
-    </form>
-</div>
+</section>
 
-<script src="login.js"></script>
+<!-- 頁尾 -->
+<footer class="footer">
+  <p>客服中心 | 購物說明 | 隱私權政策</p>
+  <p>&copy; 2025 momo購物網</p>
+</footer>
+
 </body>
 </html>

