@@ -1,128 +1,116 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>momo購物網</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>momo 登入</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+<div class="container">
+    <header>
+        <div class="menu-icon">
+            <div class="hamburger"></div>
+        </div>
+        <div class="logo">
+            <img src="/api/placeholder/150/50" alt="momo logo">
+        </div>
+        <div class="header-icons">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="history-icon">
+                <i class="fas fa-history"></i>
+            </div>
+        </div>
+    </header>
 
-<!-- 頁首 -->
-<header class="header">
-  <div class="logo">momo</div>
-  <input type="text" class="search-bar" placeholder="請輸入商品關鍵字">
-  <div class="user-actions">
-    <a href="#">登入</a> / <a href="#">註冊</a>
-  </div>
-</header>
+    <main>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="account">帳號</label>
+                <div class="input-container">
+                    <input type="text" id="account" placeholder="手機/身分字號/統一證號(三擇一)">
+                    <span class="eye-icon"><i class="fas fa-eye-slash"></i></span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="password">密碼</label>
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="6-15位英數字混合密碼，英文需區分大小寫">
+                    <span class="eye-icon"><i class="fas fa-eye-slash"></i></span>
+                </div>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember" checked>
+                <label for="remember">保持登入狀態</label>
+            </div>
+            <button type="submit" class="login-btn">登入</button>
+            <div class="links">
+                <a href="#" class="register">立即註冊</a>
+                <a href="#" class="forgot">忘記密碼?</a>
+            </div>
+        </form>
 
-<!-- 主選單 -->
-<nav class="nav-bar">
-  <ul>
-    <li><a href="#">美妝</a></li>
-    <li><a href="#">家電</a></li>
-    <li><a href="#">服飾</a></li>
-    <li><a href="#">美食</a></li>
-    <li><a href="#">日用</a></li>
-    <li><a href="#">更多</a></li>
-  </ul>
-</nav>
+        <div class="notice">
+            <ol>
+                <li>會員不應擁有多個使用者帳號，平台保有封鎖之權利，詳情請參閱客戶服務條款。</li>
+                <li>因合作物流業者調整配送政策，新北、桃園部分區域將無法提供快速到貨服務，詳請參閱-常見問題\配送問題\快速到貨\快速到貨條件說明行政區域。</li>
+                <li>momo不會以電話或簡訊通知變更付款，或要求以ATM進行任何操作，請定期更改密碼確保帳戶安全。</li>
+            </ol>
+        </div>
 
-<!-- 輪播廣告區 -->
-<section class="carousel">
-  <div class="banner">🔥 限時下殺 5 折 🔥</div>
-</section>
+        <div class="alt-login">
+            <div class="alt-login-title">
+                <span class="line"></span>
+                <span class="text">使用其他方式登入</span>
+                <span class="line"></span>
+            </div>
+            <div class="social-login">
+                <div class="social-btn facebook">
+                    <img src="img/Facebook_icon.png" alt="Facebook">
+                </div>
+                <div class="social-btn line">
+                    <img src="img/Line-Logo.png" alt="LINE">
+                </div>
+                <div class="social-btn google">
+                    <img src="img/google-logo.webp" alt="Google">
+                </div>
+            </div>
+        </div>
+    </main>
 
-<!-- 商品展示區 -->
-<section class="product-list">
-  <!-- 熱門商品 -->
-  <div class="product-card">
-    <div class="product-img">商品圖</div>
-    <p class="product-name">限時優惠！洗衣機</p>
-    <p class="product-price">$8,888</p>
-    <button>立即購買</button>
-  </div>
-  <div class="product-card">
-    <div class="product-img">商品圖</div>
-    <p class="product-name">最新款手機</p>
-    <p class="product-price">$29,999</p>
-    <button>立即購買</button>
-  </div>
-  <!-- 家電 -->
-  <div class="product-card">
-    <div class="product-img">家電商品圖1</div>
-    <p class="product-name">智慧掃地機器人</p>
-    <p class="product-price">$5,999</p>
-    <button>立即購買</button>
-  </div>
-  <div class="product-card">
-    <div class="product-img">家電商品圖2</div>
-    <p class="product-name">空氣清淨機</p>
-    <p class="product-price">$3,499</p>
-    <button>立即購買</button>
-  </div>
-  <!-- 服飾 -->
-  <div class="product-card">
-    <div class="product-img">服飾商品圖1</div>
-    <p class="product-name">時尚連帽外套</p>
-    <p class="product-price">$1,199</p>
-    <button>立即購買</button>
-  </div>
-  <div class="product-card">
-    <div class="product-img">服飾商品圖2</div>
-    <p class="product-name">經典牛仔褲</p>
-    <p class="product-price">$899</p>
-    <button>立即購買</button>
-  </div>
-  <!-- 美食 -->
-  <div class="product-card">
-    <div class="product-img">美食商品圖1</div>
-    <p class="product-name">手工巧克力禮盒</p>
-    <p class="product-price">$499</p>
-    <button>立即購買</button>
-  </div>
-  <div class="product-card">
-    <div class="product-img">美食商品圖2</div>
-    <p class="product-name">頂級咖啡豆</p>
-    <p class="product-price">$799</p>
-    <button>立即購買</button>
-  </div>
-  <!-- 日用 -->
-  <div class="product-card">
-    <div class="product-img">日用商品圖1</div>
-    <p class="product-name">多功能收納盒</p>
-    <p class="product-price">$199</p>
-    <button>立即購買</button>
-  </div>
-  <div class="product-card">
-    <div class="product-img">日用商品圖2</div>
-    <p class="product-name">環保吸水毛巾</p>
-    <p class="product-price">$99</p>
-    <button>立即購買</button>
-  </div>
-  <!-- 美妝 -->
-  <div class="product-card">
-    <div class="product-img">美妝商品圖1</div>
-    <p class="product-name">高效保濕面膜</p>
-    <p class="product-price">$299</p>
-    <button>立即購買</button>
-  </div>
-  <div class="product-card">
-    <div class="product-img">美妝商品圖2</div>
-    <p class="product-name">抗皺精華液</p>
-    <p class="product-price">$1,299</p>
-    <button>立即購買</button>
-  </div>
+    <footer>
+        <div class="footer-nav">
+            <div class="nav-item">
+                <i class="fas fa-home"></i>
+                <div>首頁</div>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-crown"></i>
+                <div>熱銷榜</div>
+            </div>
+            <div class="nav-item">
+                <i class="far fa-heart"></i>
+                <div>追蹤清單</div>
+            </div>
+            <div class="nav-item">
+                <i class="far fa-bell"></i>
+                <div>通知</div>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-shopping-cart"></i>
+                <div>購物車</div>
+            </div>
+            <div class="nav-item">
+                <i class="far fa-user"></i>
+                <div>會員中心</div>
+            </div>
+        </div>
+    </footer>
+</div>
 
-</section>
-
-<!-- 頁尾 -->
-<footer class="footer">
-  <p>客服中心 | 購物說明 | 隱私權政策</p>
-  <p>&copy; 2025 momo購物網</p>
-</footer>
-
-<script src="index.js"></script>
+<script src="login.js"></script>
 </body>
 </html>

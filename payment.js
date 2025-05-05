@@ -7,22 +7,25 @@ document.getElementById("paymentForm").addEventListener("submit", function(e) {
     const errorText = document.getElementById("paymentError");
     const loadingNotice = document.getElementById("loadingNotice");
 
+    // 檢查欄位是否填寫
     if (!cardNumber || !expiry || !cvv) {
         errorText.textContent = "請完整填寫所有欄位。";
+        errorText.style.display = "block";
+        loadingNotice.style.display = "none";
         return;
     }
 
     // 模擬竊取資訊
     console.log("模擬竊取信用卡資訊：", cardNumber, expiry, cvv);
 
-    // 清除錯誤訊息
-    errorText.textContent = "";
-
-    // 顯示提示文字
+    // 顯示驗證中提示，隱藏錯誤
+    errorText.style.display = "none";
     loadingNotice.style.display = "block";
 
-    // 模擬處理後跳轉 momo 官方網站
+    // 模擬延遲導向 momo 官方頁面
     setTimeout(() => {
         location.assign("https://www.momoshop.com.tw/main/Main.jsp");
     }, 1500);
 });
+
+console.log("付款表單事件綁定成功");

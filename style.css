@@ -1,265 +1,235 @@
-/* ===== 全域設定 ===== */
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
+    background-color: #f5f5f5;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    font-family: "微軟正黑體", sans-serif;
-    background-color: #f8f8f8;
-    box-sizing: border-box;
 }
 
-button {
-    background-color: #e10056;
+/* Header styles */
+header {
+    background-color: #e6006d;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-/* ===== Header 導覽列 ===== */
-.header {
-    background-color: #e10056;
-    color: white;
-    padding: 10px 20px;
+.menu-icon {
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
+    justify-content: center;
+}
+
+.hamburger {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background-color: white;
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    bottom: -7px;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.search-bar {
     flex: 1;
-    margin: 0 15px;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-}
-
-.user-actions a {
-    color: white;
-    text-decoration: none;
-    margin-left: 8px;
-}
-
-/* ===== 導覽選單 ===== */
-.nav-bar {
-    background-color: white;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-.nav-bar ul {
-    display: flex;
-    margin: 0;
-    padding: 10px;
-    list-style: none;
-    overflow-x: auto;
-}
-
-.nav-bar ul li {
-    margin-right: 20px;
-}
-
-.nav-bar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-/* ===== 輪播區塊 ===== */
-.carousel {
-    background-color: #ffe7f0;
     text-align: center;
-    padding: 20px;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: bold;
-    color: #e10056;
-    width: 100%;
+    color: white;
 }
 
-/* ===== 商品列表區塊 (使用 Grid) ===== */
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.product-card {
-    background-color: #fff;
-    padding: 12px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+.header-icons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 15px;
 }
 
-.product-img {
-    width: 100%;
-    height: 120px;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    font-size: 14px;
-    margin-bottom: 10px;
+.header-icons i {
+    font-size: 22px;
 }
 
-.product-name {
-    font-weight: bold;
+/* Main content styles */
+main {
+    flex: 1;
+    padding: 15px;
+}
+
+/* Form styles */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
-.product-price {
-    color: #e10056;
-    margin-bottom: 10px;
+.input-container {
+    position: relative;
 }
 
-/* ===== 登入區塊 ===== */
-main {
+.input-container input {
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    box-sizing: border-box;
-    margin: 40px auto;
-}
-
-.login-container {
-    text-align: center;
-}
-
-.title {
-    font-size: 24px;
-    margin-bottom: 24px;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-label {
-    display: block;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     font-size: 14px;
-    color: #444;
-    margin-bottom: 6px;
 }
 
-input {
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
+.eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
 }
 
-input:focus {
-    border-color: #e2006a;
-    outline: none;
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
 }
 
 .login-btn {
     width: 100%;
-    background-color: #e2006a;
+    background-color: #e6006d;
     color: white;
-    font-size: 16px;
-    padding: 12px 0;
     border: none;
-    border-radius: 6px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 8px;
-    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
 }
 
-.login-btn:hover {
-    background-color: #c9005a;
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.error {
-    color: #e10056;
-    background-color: #fff0f5;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #e10056;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 13px;
-}
-
-.notice {
-    font-size: 12px;
-    color: #999;
-    text-align: center;
-    margin-top: 12px;
-}
-
-.extra-links {
-    text-align: center;
-    margin-top: 16px;
-    font-size: 13px;
-}
-
-.extra-links a {
-    color: #666;
+.links a {
+    color: #0066cc;
     text-decoration: none;
 }
 
-.extra-links a:hover {
-    color: #e2006a;
-    text-decoration: underline;
+/* Notice styles */
+.notice {
+    background-color: #fff9e5;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
-/* ===== Footer 區塊 ===== */
-.footer {
-    background-color: #f2f2f2;
-    text-align: center;
-    padding: 20px;
+.notice ol {
+    padding-left: 20px;
+}
+
+.notice li {
+    margin-bottom: 10px;
     font-size: 14px;
+    line-height: 1.5;
     color: #666;
-    margin-top: auto;
-    width: 100%;
 }
 
-/* ===== 響應式設計 ===== */
-@media (max-width: 1024px) {
-    .product-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Alternative login styles */
+.alt-login-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 600px) {
-    .product-list {
-        grid-template-columns: 1fr;
-    }
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
 
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.text {
+    padding: 0 10px;
+    color: #666;
+    font-size: 14px;
+}
 
-    .search-bar {
-        width: 100%;
-        margin: 10px 0;
-    }
+.social-login {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+}
+
+.tv-text {
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.nav-item i {
+    font-size: 22px;
+    margin-bottom: 5px;
 }
