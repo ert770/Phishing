@@ -2,35 +2,186 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>momo購物網 - 補繳款項</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>momo 訂單結帳</title>
+  <link rel="stylesheet" href="PaymentStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-<div class="login-container">
-  <h1 class="title">付款驗證</h1>
+<div class="container">
+  <header>
+    <div class="back-btn">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="title">
+      <div class="logo">momo</div>
+      <div class="page-name">訂單補付款</div>
+    </div>
+    <div class="close-btn">
+      <i class="fas fa-times"></i>
+    </div>
+  </header>
 
-  <form id="paymentForm">
-    <div class="form-group">
-      <label for="cardNumber">信用卡卡號</label>
-      <input type="text" id="cardNumber" placeholder="請輸入信用卡卡號" required>
+  <main>
+    <!-- 訂單金額 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="total-amount">訂單金額 = <span class="price">$5050</span></p>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="expiry">有效期限</label>
-      <input type="text" id="expiry" placeholder="MM/YY" required>
+    <!-- moPlus會員優惠 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="benefit-title">訂閱moPlus會員享4%回饋</p>
+        <p class="benefit-desc">首次訂閱moPlus會員，享首30天$1優惠，再享最高8%回饋，請至「會員中心→活動專區→訂閱moPlus會員」訂閱</p>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="cvv">安全碼</label>
-      <input type="password" id="cvv" placeholder="CVV" required>
+    <!-- momo卡優惠 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="benefit-title">刷momo卡，消費回饋最高3%！</p>
+        <p class="benefit-desc">即期期間、免等實體卡、海外消費回饋1%，請至「會員中心→個人帳戶管理→momo卡申請」</p>
+      </div>
     </div>
 
-    <button type="submit" class="login-btn">確認付款</button>
+    <!-- 訂購人資料 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="section-title">訂購人資料</p>
+        <div class="info-item">
+          <span class="info-label">姓名</span>
+          <span class="info-value">王*明</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">手機</span>
+          <span class="info-value">0911***911</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Email</span>
+          <span class="info-value">ya**********@gmail.com</span>
+        </div>
+      </div>
+    </div>
 
-    <p class="notice" id="loadingNotice" style="display:none;">驗證中，請稍候...</p>
-    <p class="error" id="paymentError" style="display:none;"></p>
-  </form>
+    <!-- 付款方式 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="section-title">付款方式</p>
+        <div class="payment-options">
+          <div class="payment-option">
+            <input type="radio" id="credit-once" name="payment" checked>
+            <label for="credit-once">信用卡一次付清</label>
+          </div>
+        </div>
+
+        <div class="credit-card-form">
+          <div class="form-group">
+            <input type="text" placeholder="請輸入信用卡卡號" class="card-number">
+          </div>
+          <div class="form-group date-cvv">
+            <select class="exp-month">
+              <option selected disabled>有效月</option>
+              <option>01</option>
+              <option>02</option>
+              <!-- 其他月份選項 -->
+            </select>
+            <select class="exp-year">
+              <option selected disabled>有效年</option>
+              <option>2024</option>
+              <option>2025</option>
+              <!-- 其他年份選項 -->
+            </select>
+            <input type="text" placeholder="輸入末三碼" class="cvv">
+          </div>
+          <div class="form-group checkbox">
+            <input type="checkbox" id="save-card" checked>
+            <label for="save-card">我同意記錄本次付款資訊</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 持卡人資料 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="section-title">持卡人資料</p>
+        <div class="cardholder-options">
+          <div class="cardholder-option">
+            <input type="radio" id="same-person" name="cardholder" checked>
+            <label for="same-person">同訂購人</label>
+          </div>
+          <div class="cardholder-option">
+            <input type="radio" id="different-person" name="cardholder">
+            <label for="different-person">非訂購人本人</label>
+          </div>
+        </div>
+        <p class="card-note">momo將依您提供資料與銀行對帳查詢信用卡出現爭議，提醒您使用他人信息進行交易，經查實必移送法辦</p>
+      </div>
+    </div>
+
+    <!-- 發票資料 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="section-title">發票資料</p>
+        <div class="receipt-options">
+          <button class="receipt-option active">個人發票</button>
+          <button class="receipt-option">發票捐贈</button>
+          <button class="receipt-option">公司用發票</button>
+        </div>
+
+        <div class="e-invoice-options">
+          <div class="e-invoice-option">
+            <input type="radio" id="momo-invoice" name="e-invoice" checked>
+            <label for="momo-invoice">momo購物會員載具</label>
+          </div>
+          <div class="e-invoice-option">
+            <input type="radio" id="mobile-invoice" name="e-invoice">
+            <label for="mobile-invoice">手機條碼載具</label>
+          </div>
+          <div class="e-invoice-option">
+            <input type="radio" id="natural-invoice" name="e-invoice">
+            <label for="natural-invoice">自然人憑證載具</label>
+          </div>
+        </div>
+
+        <p class="invoice-note">個人發票(將於本次上午8:00)開立至【會員中心→訂單查詢】查詢</p>
+
+        <div class="agree-section">
+          <div class="agree-checkbox">
+            <input type="checkbox" id="agree-terms" checked>
+            <label for="agree-terms">我同意當退退貨時，由momo購物網代為處理發票及銷售退回證明單，以加速退貨作業。</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 付款明細 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="section-title">付款明細</p>
+        <div class="payment-detail">
+          <div class="detail-item">
+            <span class="detail-label">信用卡一次付清</span>
+            <span class="detail-value">$5050</span>
+          </div>
+          <div class="detail-item total">
+            <span class="detail-label">訂單金額</span>
+            <span class="detail-value price">$5050</span>
+          </div>
+        </div>
+        <div class="final-total">
+          <span class="total-label">結帳金額</span>
+          <span class="total-value price">$5050</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <button class="confirm-btn">確認結帳</button>
+  </footer>
 </div>
 
 <script src="payment.js"></script>
