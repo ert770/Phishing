@@ -6,6 +6,21 @@
     font-family: Arial, sans-serif;
 }
 
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .card-content, main {
+        padding: 10px;
+    }
+
+    .payment-option, .cardholder-option {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 body {
     background-color: #f5f5f5;
     font-size: 14px;
@@ -47,7 +62,7 @@ header {
     justify-content: center; /* Center horizontally */
     text-align: center; /* Ensure text alignment */
     width: 100%; /* Ensure it spans the full width */
-    font-size: 100000000px; /* Increase font size */
+    font-size: 24px; /* Increase font size */
     font-weight: bold; /* Make the text bold */
 }
 
@@ -338,3 +353,18 @@ footer {
     font-weight: bold;
     cursor: pointer;
 }
+
+.confirm-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+input[type="text"], input[type="number"] {
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-bottom: 1px solid #e6006d;
+}
+
+
