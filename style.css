@@ -198,39 +198,37 @@ main {
 
 .social-login {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    gap: 20px; /* Consistent spacing between logos */
 }
 
 .social-btn {
+    width: 50px; /* Set consistent width */
+    height: 50px; /* Set consistent height */
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+    justify-content: center;
+    border-radius: 5px; /* Optional: rounded corners */
+    overflow: hidden; /* Ensure images fit within the button */
 }
 
 .social-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 5px;
+    width: 100%; /* Ensure the image fills the button */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits properly */
 }
-
 .social-btn.facebook img {
-    background-color: #1877f2;
+    background-color: #ffffff;
     padding: 5px;
 }
 
 .social-btn.line img {
-    background-color: #06c755;
+    background-color: #ffffff;
     padding: 5px;
 }
 
 .social-btn.google img {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 5px;
     border: 1px solid #ddd;
 }
