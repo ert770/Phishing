@@ -47,6 +47,8 @@ header {
     justify-content: center; /* Center horizontally */
     text-align: center; /* Ensure text alignment */
     width: 100%; /* Ensure it spans the full width */
+    font-size: 100000000px; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
 }
 
 .logo {
