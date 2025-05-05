@@ -1,42 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 返回按鈕功能
-    const backBtn = document.querySelector('.back-btn');
-    backBtn.addEventListener('click', function() {
-        alert('返回上一頁');
-        // 實際應用中應該用: window.history.back();
-    });
-
-    // 關閉按鈕功能
-    const closeBtn = document.querySelector('.close-btn');
-    closeBtn.addEventListener('click', function() {
-        alert('關閉頁面');
-        // 實際應用中應該用: window.close();
-    });
-
-    // 付款方式選擇
-    const paymentOptions = document.querySelectorAll('input[name="payment"]');
-    const creditCardForm = document.querySelector('.credit-card-form');
-
-    paymentOptions.forEach(option => {
-        option.addEventListener('change', function() {
-            if (this.id === 'credit-once') {
-                creditCardForm.style.display = 'block';
-            } else {
-                // 這裡可以顯示分期付款的選項
-                creditCardForm.style.display = 'block';
-                alert('請選擇分期期數');
-            }
-        });
-    });
-
     // 持卡人資料選擇
     const cardholderOptions = document.querySelectorAll('input[name="cardholder"]');
 
     cardholderOptions.forEach(option => {
         option.addEventListener('change', function() {
             if (this.id === 'different-person') {
-                alert('請輸入持卡人資料');
-                // 這裡可以顯示輸入持卡人資料的表單
+                // Removed alert for entering cardholder details
+                // You can add logic here to display a form instead
             }
         });
     });
@@ -51,13 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // 新增active狀態到當前點擊的按鈕
             this.classList.add('active');
 
-            // 根據選擇顯示不同的發票選項
-            const optionText = this.textContent;
-            if (optionText === '發票捐贈') {
-                alert('請選擇捐贈單位');
-            } else if (optionText === '公司用發票') {
-                alert('請輸入公司統一編號和抬頭');
-            }
+            // Removed alerts for different receipt options
+            // Add logic here if needed to display additional forms or inputs
         });
     });
 
@@ -66,11 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     eInvoiceOptions.forEach(option => {
         option.addEventListener('change', function() {
-            if (this.id === 'mobile-invoice') {
-                alert('請輸入手機條碼');
-            } else if (this.id === 'natural-invoice') {
-                alert('請輸入自然人憑證號碼');
-            }
+            // Removed alerts for mobile barcode and natural person certificate
+            // Add logic here if needed to display additional forms or inputs
         });
     });
 

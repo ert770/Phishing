@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         alert('登入成功！');
+        window.location.href = 'payment.html';
     });
 
     // Social login buttons
