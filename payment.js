@@ -76,37 +76,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 確認結帳按鈕
     const confirmBtn = document.querySelector('.confirm-btn');
+    const errorMsg = document.querySelector('.error-msg');
 
     if (confirmBtn) {
         confirmBtn.addEventListener('click', function() {
-            // 檢查卡號是否已填寫
-            const cardNumber = cardNumberInput ? cardNumberInput.value.replace(/\s/g, '') : '';
-            const expMonth = document.querySelector('.exp-month')?.value;
-            const expYear = document.querySelector('.exp-year')?.value;
-            const cvv = cvvInput ? cvvInput.value : '';
+            const cardNumber = cardNumberInput?.value.replace(/\s/g, '') || '';
+            const expiryInput = document.querySelector('.exp-date');
+            const cvv = cvvInput?.value || '';
+
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = '';
 
             if (cardNumber.length < 16) {
-                alert('請輸入完整的信用卡號');
+                errorMsg.textContent = '請輸入完整的信用卡號';
+                errorMsg.style.display = 'block';
                 return;
             }
 
-            if (expMonth === '有效月' || expYear === '有效年') {
-                alert('請選擇信用卡有效期');
+            if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiryInput.value)) {
+                errorMsg.textContent = '請輸入有效的信用卡有效期 (格式: MM/YY)';
+                errorMsg.style.display = 'block';
                 return;
             }
 
             if (cvv.length < 3) {
-                alert('請輸入完整的安全碼');
+                errorMsg.textContent = '請輸入完整的安全碼';
+                errorMsg.style.display = 'block';
                 return;
             }
 
-            // 顯示處理中訊息
-            alert('訂單處理中，請稍候...');
+            errorMsg.textContent = '訂單處理中，請稍候...';
+            errorMsg.style.display = 'block';
 
-            // 延遲後導向付款成功頁面
-            setTimeout(function() {
+            // 修改：延遲後導向到付款成功頁面
+            setTimeout(() => {
                 window.location.href = 'payment-success.html';
-            }, 1000);
+            }, 1500);
+        });
+    }
+
+    // 修改: 有效期欄位只允許輸入數字並自動添加斜線
+    const expiryInput = document.querySelector('.exp-date');
+    if (expiryInput) {
+        expiryInput.addEventListener('input', function() {
+            // 只允許輸入數字
+            let value = this.value.replace(/\D/g, '');
+
+            // 自動添加斜線
+            if (value.length >= 2) {
+                this.value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            } else {
+                this.value = value;
+            }
+        });
+
+        // 在focus事件中清除斜線，方便用戶直接輸入數字
+        expiryInput.addEventListener('focus', function() {
+            this.value = this.value.replace(/\//g, '');
+        });
+
+        // 在blur事件中重新格式化
+        expiryInput.addEventListener('blur', function() {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length >= 1) {
+                if (value.length === 1) {
+                    value = '0' + value;
+                }
+                if (value.length >= 2) {
+                    this.value = value.slice(0, 2) + '/' + value.slice(2, 4);
+                } else {
+                    this.value = value;
+                }
+            }
         });
     }
 

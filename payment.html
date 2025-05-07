@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>momo 訂單結帳</title>
-  <link rel="stylesheet" href="PaymentStyle.css">
+  <link rel="stylesheet" href="payment.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
@@ -17,6 +17,9 @@
   </header>
 
   <main>
+    <!-- 錯誤訊息區塊 -->
+    <p class="notice-banner hidden" id="noticeBanner"></p>
+
     <!-- 訂單金額 -->
     <div class="card">
       <div class="card-content">
@@ -72,27 +75,26 @@
 
         <div class="credit-card-form">
           <div class="form-group">
-            <input type="text" placeholder="請輸入信用卡卡號" class="card-number">
+            <input type="text" placeholder="請輸入信用卡卡號" class="card-number" id="cardNumber" maxlength="19">
+            <i class="fas fa-credit-card icon-right"></i>
           </div>
-          <div class="form-group date-cvv">
-            <select class="exp-month">
-              <option selected disabled>有效月</option>
-              <option>01</option>
-              <option>02</option>
-              <!-- 其他月份選項 -->
-            </select>
-            <select class="exp-year">
-              <option selected disabled>有效年</option>
-              <option>2024</option>
-              <option>2025</option>
-              <!-- 其他年份選項 -->
-            </select>
-            <input type="text" placeholder="輸入末三碼" class="cvv">
+          <div class="date-cvv">
+            <div class="form-group">
+              <input type="text" placeholder="MM/YY" class="exp-date" id="expDate" maxlength="5">
+              <i class="fas fa-calendar-alt icon-right"></i>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="輸入末三碼 CVV" class="cvv" id="cvv" maxlength="3">
+              <div class="cvv-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+            </div>
           </div>
           <div class="form-group checkbox">
             <input type="checkbox" id="save-card" checked>
             <label for="save-card">我同意記錄本次付款資訊</label>
           </div>
+          <div class="error-msg"></div>
         </div>
       </div>
     </div>
@@ -174,7 +176,7 @@
   </main>
 
   <footer>
-    <button class="confirm-btn">確認結帳</button>
+    <button class="confirm-btn" id="confirmBtn">確認結帳</button>
   </footer>
 </div>
 

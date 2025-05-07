@@ -367,4 +367,57 @@ input:focus {
     border-bottom: 1px solid #e6006d;
 }
 
+/* Adjust MM/YY field style */
+.exp-date {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background-color: transparent;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
 
+.exp-date:focus {
+    border-bottom: 1px solid #e6006d;
+}
+
+/* Ensure the checkbox is on a new line */
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Add spacing from the previous fields */
+}
+
+.checkbox label {
+    font-size: 14px;
+    color: #333;
+    margin-left: 5px;
+    line-height: 1.5;
+}
+
+/* 新增的樣式 */
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.cvv-container {
+    position: relative;
+}
+
+.cvv-icon {
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+    color: #666;
+}
+
+.error-msg {
+    color: #e6006d;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
